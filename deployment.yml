@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crabe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crabe
+  template:
+    metadata:
+      labels:
+        app: crabe
+    spec:
+      containers:
+        - name: crabe
+          image: mailinenguyen/crabe
+        - env:
+            - name: SPRING_DATASOURCE_PASSWORD
+                valueFrom:
+                  secretKeyRef:
+                    name: postgres-crabe-postgresql
+                    key: postgres-password
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres-crabe-postgresql/
+

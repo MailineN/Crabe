@@ -17,10 +17,10 @@ spec:
           image: mailinenguyen/crabe
           env:
             - name: SPRING_DATASOURCE_PASSWORD
-                valueFrom:
-                  secretKeyRef:
-                    name: postgres-crabe-postgresql
-                    key: postgres-password
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-crabe-postgresql
+                  key: postgres-password
             - name: SPRING_DATASOURCE_USERNAME
               value: postgres
             - name: SPRING_DATASOURCE_URL

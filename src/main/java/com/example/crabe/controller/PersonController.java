@@ -38,9 +38,9 @@ public class PersonController {
     }
 
     @PostMapping("/persons")
-    ResponseEntity<Person> newPerson(@RequestBody Person person){
+    ResponseEntity<List<Person>> newPerson(@RequestBody List<Person> person){
 
-        return new ResponseEntity<Person>(repository.save(person),HttpStatus.CREATED);
+        return new ResponseEntity<List<Person>>(repository.saveAll(person),HttpStatus.CREATED);
     }
 
     @GetMapping(value = "/persons/sample/{sampleSize}", produces = "application/json")

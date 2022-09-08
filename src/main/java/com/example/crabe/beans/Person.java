@@ -15,11 +15,11 @@ public class Person {
     private String nom;
     private String prenom;
     private String email;
-    private String telephone;
+
     public Person() {
 
     }
-    public Person(String nom, String prenom, String email, String telephone){
+    public Person(String nom, String prenom, String email){
         this.email =email;
         this.nom = nom;
         this.prenom = prenom;
@@ -66,7 +66,7 @@ public class Person {
 
     @Override
     public int hashCode() {
-        return Objects.hash(nom, prenom, email, telephone);
+        return Objects.hash(nom, prenom, email);
     }
 
     @Override

@@ -23,7 +23,7 @@ public class Person {
         this.email =email;
         this.nom = nom;
         this.prenom = prenom;
-        this.telephone = telephone;
+
     }
 
     public Long getId() {
@@ -54,20 +54,14 @@ public class Person {
         this.email = email;
     }
 
-    public String getTelephone() {
-        return telephone;
-    }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return nom.equals(person.nom) && prenom.equals(person.prenom) && email.equals(person.email) && telephone.equals(person.telephone);
+        return nom.equals(person.nom) && prenom.equals(person.prenom) && email.equals(person.email) ;
     }
 
     @Override
@@ -81,7 +75,7 @@ public class Person {
                 "nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", email='" + email + '\'' +
-                ", telephone='" + telephone + '\'' +
+
                 '}';
     }
 }
